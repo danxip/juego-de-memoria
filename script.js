@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let primeraTarjeta = null;
     let segundaTarjeta = null;
-    let bloqueoTablero = false;
+    let bloqueoTablero = true; // Bloquear el tablero inicialmente
     let puntaje = 0;
     let tiempoRestante = 0;
     let intervaloTiempo;
@@ -56,6 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
             tablero.appendChild(tarjetaElemento);
             tarjetaElemento.addEventListener('click', voltearTarjeta);
         });
+
+        // Mostrar todas las tarjetas al inicio
+        revelarTodasLasTarjetas();
+    }
+
+    function revelarTodasLasTarjetas() {
+        const todasLasTarjetas = document.querySelectorAll('.tarjeta');
+        todasLasTarjetas.forEach((tarjeta) => tarjeta.classList.add('mostrada'));
+
+        // Ocultar las tarjetas después de 5 segundos
+        setTimeout(() => {
+            todasLasTarjetas.forEach((tarjeta) => tarjeta.classList.remove('mostrada'));
+            bloqueoTablero = false; // Permitir la interacción después de la previsualización
+            iniciarTemporizador(); // Iniciar el temporizador
+        }, 5000);
     }
 
     function voltearTarjeta() {
@@ -133,8 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
         puntaje = 0;
         tiempoRestante = parseInt(localStorage.getItem('tiempoSeleccionado')) || 60; // Leer tiempo desde localStorage
         puntajeElemento.textContent = 'Puntaje: 0';
+        bloqueoTablero = true; // Bloquear tablero durante la previsualización
         crearTablero();
-        iniciarTemporizador();
     }
 
     // Inicialización
