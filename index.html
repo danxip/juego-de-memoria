@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria - Inicio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #4a90e2, #002f57);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #002f57;
+            width: 100%;
+            text-align: center;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #ffc107;
+        }
+
+        nav {
+            background-color: #333;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0.5rem 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ffc107;
+        }
+
+        main {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #002f57;
+            font-size: 2rem;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 1rem;
+            color: #002f57;
+        }
+
+        select, .btn-jugar {
+            padding: 0.8rem 1rem;
+            width: 100%;
+            margin: 1rem 0;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 2px solid #4a90e2;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        select {
+            background-color: #f0f4f8;
+            color: #002f57;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #ffc107;
+            box-shadow: 0 0 8px #ffc107;
+        }
+
+        .btn-jugar {
+            background-color: #ffc107;
+            color: #002f57;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-jugar:hover {
+            background-color: #002f57;
+            color: #ffc107;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #002f57;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            width: 100%;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Juego de Memoria</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="integrantes.html">Integrantes</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="explicacion">
+            <h2>¿Cómo Jugar?</h2>
+            <p>El objetivo del juego es emparejar todas las tarjetas antes de que se acabe el tiempo. Selecciona un tiempo límite y presiona "Empezar Juego" para iniciar. ¡Buena suerte!</p>
+            
+            <label for="tiempo-limite">Tiempo límite (minutos):</label>
+            <select id="tiempo-limite">
+                <option value="2">2 minutos</option>
+                <option value="3">3 minutos</option>
+                <option value="4">4 minutos</option>
+                <option value="5">5 minutos</option>
+                <option value="6">6 minutos</option>
+            </select>
+            
+            <button id="btn-empezar" class="btn-jugar">Empezar Juego</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Juego de Memoria. Diseñado para desafiar tu mente.</p>
+    </footer>
+
+    <script>
+        // Redirigir al juego con el tiempo seleccionado
+        document.getElementById('btn-empezar').addEventListener('click', () => {
+            const tiempo = document.getElementById('tiempo-limite').value;
+            const tiempoEnSegundos = tiempo * 60; // Convertir minutos a segundos
+            localStorage.setItem('tiempoSeleccionado', tiempoEnSegundos);
+            window.location.href = `juego.html?tiempo=${tiempo}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrantes del Grupo</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fondo suave */
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .container {
+            padding-top: 50px;
+        }
+        h1 {
+            color: #343a40; /* Título oscuro */
+            margin-bottom: 30px;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none; /* Eliminar bordes */
+            border-radius: 10px;
+        }
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            object-fit: cover;
+            height: 200px;
+        }
+        .card:hover {
+            transform: translateY(-10px); /* Efecto de elevación */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
+        .card-title {
+            color: #007bff; /* Títulos en azul */
+        }
+        .card-text {
+            color: #6c757d; /* Texto gris suave */
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Juego de Memoria</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="integrantes.html">Integrantes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container text-center">
+        <h1>Integrantes del Proyecto</h1>
+        <p class="mb-5">Estos son los miembros que conforman el equipo encargado de desarrollar el Juego de Memoria:</p>
+        
+        <!-- Información de los integrantes -->
+        <div class="row">
+            <!-- Integrante 1 -->
+            <div class="col-md-4 mb-5">
+                <div class="card">
+                    <!-- Foto de Luis -->
+                    <img src="img/luis.jpg" class="card-img-top" alt="Luis Adrian Cardozo">
+                    <div class="card-body">
+                        <h5 class="card-title">Luis Adrian Cardozo Marmol</h5>
+                        <p class="card-text">Desarrollador Front-End. Responsable de la estructura HTML, diseño CSS y lógica del juego en JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 2 -->
+            <div class="col-md-4 mb-5">
+                <div class="card">
+                    <!-- Foto de Daniel -->
+                    <img src="img/daniel.jpg" class="card-img-top" alt="Daniel Olarte Jimenez">
+                    <div class="card-body">
+                        <h5 class="card-title">Daniel Olarte Jimenez</h5>
+                        <p class="card-text">Desarrollador Backend. Encargado de la organización y control de datos del juego, colaborando en la lógica del juego.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 3 -->
+            <div class="col-md-4 mb-5">
+                <div class="card">
+                    <!-- Foto de Hilda -->
+                    <img src="img/johana.jpg" class="card-img-top" alt="Hilda Yohana Urbina Meneses">
+                    <div class="card-body">
+                        <h5 class="card-title">Hilda Yohana Urbina Meneses</h5>
+                        <p class="card-text">Coordinadora del proyecto. Responsable de la documentación y organización del equipo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrante 4 -->
+            <div class="col-md-4 mb-5">
+                <div class="card">
+                    <!-- Foto de Juan -->
+                    <img src="img/juan.jpg" class="card-img-top" alt="Juan David Mercado">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan David Mercado</h5>
+                        <p class="card-text">Desarrollador Front-End. Colabora en la creación de la interfaz gráfica y funcionalidades del juego.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
