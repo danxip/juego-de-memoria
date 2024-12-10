@@ -131,13 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function reiniciarJuego() {
         clearInterval(intervaloTiempo);
         puntaje = 0;
-        tiempoRestante = 60; // Cambia esto según el tiempo deseado
+        tiempoRestante = parseInt(localStorage.getItem('tiempoSeleccionado')) || 60; // Leer tiempo desde localStorage
         puntajeElemento.textContent = 'Puntaje: 0';
         crearTablero();
         iniciarTemporizador();
     }
 
     // Inicialización
-    tiempoRestante = parseInt(localStorage.getItem('tiempoSeleccionado')) || 60; // Valor del index
+    tiempoRestante = parseInt(localStorage.getItem('tiempoSeleccionado')) || 60; // Leer tiempo inicial
     reiniciarJuego();
 });
